@@ -1,0 +1,47 @@
+<div class="navbar navbar-dark text-light bg-dark">
+  <a class="navbar-brand text-light">Logo</a>
+  <a class="text-right">Current user</a>
+</div>
+<div class="row">
+
+  <div class="col-2 bg-dark text-light min-vh-100 pl-4">
+    Queues
+    <button id="currentStateButton" (click)="onCurrentStateClick($event)"  type="button" class="btn-block btn-secondary">Current state</button>
+    <br>
+    <button id="monitoringButton" (click)="onMonitoringClick($event)"  type="button" class="btn-block btn-secondary">Monitoring</button>
+    <br>
+    <button id="troublesButton" (click)="onTroublesClick($event)"  type="button" class="btn-block btn-secondary">Troubles</button>
+    <br>
+
+    Other
+    <button id="usersButton" (click)="onUsersClick($event)"  type="button" class="btn-block btn-secondary">Users</button>
+    <br>
+    <button id="propertiesButton" (click)="onPropertiesClick($event)"  type="button" class="btn-block btn-secondary">Properties</button>
+    <br>
+    <button id="infoButton" (click)="onInfoClick($event)"  type="button" class="btn-block btn-secondary">Info</button>
+  </div>
+
+  <div class="col-10 bg-light p-1">
+    <div [ngSwitch]="currentTab">
+      <div *ngSwitchCase="'CurrentState'">
+        <app-currentstate></app-currentstate>
+      </div>
+      <div *ngSwitchCase="'Monitoring'">
+        Monitoring content
+      </div>
+      <div *ngSwitchCase="'Troubles'">
+        Troubles content
+      </div>
+      <div *ngSwitchCase="'Users'">
+        Users content
+      </div>
+      <div *ngSwitchCase="'Properties'">
+        Properties content
+      </div>
+      <div *ngSwitchCase="'Info'">
+        Info content
+      </div>
+    </div>
+  </div>
+</div>
+
