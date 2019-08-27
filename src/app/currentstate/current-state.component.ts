@@ -32,17 +32,11 @@ const SERVICE_AVAILABILITY_DATA: ServiceAvailabilityElement[] = [
 export class CurrentStateComponent implements OnInit {
 
   dataSource = MESSAGES_STATE_DATA;
-  displayedColumns: string[] = ['stateName', 'elementsCount'];
   availabilityDataSource = SERVICE_AVAILABILITY_DATA;
-  availabilityDisplayedColumns: string[] = ['serviceName', 'available'];
 
   constructor() {
   }
 
   ngOnInit() {
-  }
-
-  onCellLoad(event: Event) {
-    console.log('onLoad: ' + event);
   }
 }
